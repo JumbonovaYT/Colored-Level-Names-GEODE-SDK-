@@ -1,0 +1,142 @@
+{
+	"geode": "4.0.0-alpha.1",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "jumbonova.colored_level_names",
+	"name": "Colored Level Names",
+	"version": "v1.2.0",
+	"developer": "Jumbonova",
+	"description": "This mod colors your level names.",
+	"tags": ["offline","interface"],
+	"settings": {
+
+
+        "Enable/disable Features": {
+            "type": "title",
+            "name": "Enable/disable Features",
+            "description": "Enable and disable features of this mod."
+        },
+        "Change Title of LevelInfo":{
+            "type": "bool",
+            "name": "Change Title of LevelInfo",
+            "description": "Change the color of level names when you open them.",
+            "default": true
+        },
+        "Change Title of Lists":{
+            "type": "bool",
+            "name": "Change Title of Lists",
+            "description": "Change the color of list names when you open them.",
+            "default": true
+        },
+        "Change Title of LevelCell":{
+            "type": "bool",
+            "name": "Change Title of LevelCell",
+            "description": "Change the color of level names when you search.",
+            "default": true
+        },
+        "Change Title of List LevelCells":{
+            "type": "bool",
+            "name": "Change Title of List LevelCells",
+            "description": "Change the color of list names.",
+            "default": true
+        },
+
+
+		"Main Difficulties Title": {
+			"type": "title",
+			"name": "Main Difficulties",
+			"description": "These are the colors used for normal difficulty level titles, like easy or harder."
+		},
+        "Easy Level Color": {
+            "name": "Easy Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Easy.",
+            "default": [111, 202, 224]
+        },
+		"Normal Level Color": {
+            "name": "Normal Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Normal.",
+            "default": [101, 235, 134]
+        },
+		"Hard Level Color": {
+            "name": "Hard Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Hard.",
+            "default": [255, 215, 82]
+        },
+		"Harder Level Color": {
+            "name": "Harder Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Harder.",
+            "default": [228, 58, 46]
+        },
+		"Insane Level Color": {
+            "name": "Insane Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Insane.",
+            "default": [255, 141, 246]
+        },
+
+
+		"Demon Difficulties Title": {
+			"type": "title",
+			"name": "Demon Difficulties",
+			"description": "These are the colors used for demon level titles, like easy demon or insane demon."
+		},
+		"Easy Demon Level Color": {
+            "name": "Easy Demon Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Easy Demon.",
+            "default": [209, 129, 255]
+        },
+		"Medium Demon Level Color": {
+            "name": "Medium Demon Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Medium Demon.",
+            "default": [238, 151, 255]
+        },
+		"Hard Demon Level Color": {
+            "name": "Hard Demon Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Hard Demon.",
+            "default": [255, 132, 132]
+        },
+		"Insane Demon Level Color": {
+            "name": "Insane Demon Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Insane Demon.",
+            "default": [255, 101, 101]
+        },
+		"Extreme Demon Level Color": {
+            "name": "Extreme Demon Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Extreme Demon.",
+            "default": [255, 79, 79]
+        },
+
+
+		"Other Difficulties Title": {
+			"type": "title",
+			"name": "Other Difficulties",
+			"description": "These are the colors used for other level titles, like N/A levels."
+		},
+		"N/A Level Color": {
+            "name": "N/A Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of N/A.",
+            "default": [255, 255, 255]
+        },
+		"Auto Level Color": {
+            "name": "Auto Level Color",
+            "type": "rgb",
+            "description": "The color used in level titles with the difficulty of Auto.",
+            "default": [255, 215, 83]
+        }
+    }
+	
+}
