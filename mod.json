@@ -8,10 +8,16 @@
 	},
 	"id": "jumbonova.colored_level_names",
 	"name": "Colored Level Names",
-	"version": "v1.2.2",
+	"version": "v1.3.0",
 	"developer": "Jumbonova",
 	"description": "This mod colors your level names.",
-	"tags": ["offline","interface"],
+	"tags": ["interface", "customization"],
+    	"links": { "source": "https://github.com/JumbonovaYT/Colored-Level-Names-GEODE-SDK-" },
+    	"dependencies": [ {
+        	"id": "geode.node-ids",
+        	"version": ">=v1.16.0",
+        	"importance": "required"
+	} ],
 	"settings": {
 
 
@@ -20,9 +26,9 @@
             "name": "Enable/disable Features",
             "description": "Enable and disable features of this mod."
         },
-        "Change Title of LevelInfo":{
+        "Change Title of Levels":{
             "type": "bool",
-            "name": "Change Title of LevelInfo",
+            "name": "Change Title of Levels",
             "description": "Change the color of level names when you open them.",
             "default": true
         },
@@ -32,9 +38,9 @@
             "description": "Change the color of list names when you open them.",
             "default": true
         },
-        "Change Title of LevelCell":{
+        "Change Title of LevelCells":{
             "type": "bool",
-            "name": "Change Title of LevelCell",
+            "name": "Change Title of LevelCells",
             "description": "Change the color of level names when you search.",
             "default": true
         },
@@ -42,6 +48,12 @@
             "type": "bool",
             "name": "Change Title of List LevelCells",
             "description": "Change the color of list names.",
+            "default": true
+        },
+        "Change Title of InfoLayer":{
+            "type": "bool",
+            "name": "Change Title of InfoLayer",
+            "description": "Change the color of the title in the 'more info' popup in a level or list. THIS USES THE RECOMMENDED DIFFICULTY, NOT THE CURRENT DIFFICULTY. IT MAY BE THE WRONG DIFFICULTY.",
             "default": true
         },
 
@@ -138,5 +150,4 @@
             "default": [255, 215, 83]
         }
     }
-	
 }
