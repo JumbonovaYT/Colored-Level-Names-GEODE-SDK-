@@ -44,7 +44,7 @@ class $modify(ColoredNameLevelInfoLayer, LevelInfoLayer) {
 
 			/*less crashes*/
 			if (!title || !difficulty) {
-				return false;
+				return true;
 			};
 
 			/*now onto editing the level info layer*/
@@ -147,7 +147,7 @@ class $modify(ColoredNameLevelListLayer, LevelListLayer) {
 
 			/*less crashes*/
 			if (!title || !difficulty) {
-				return false;
+				return true;
 			};
 
 			/*now onto editing the list info layer*/
@@ -473,7 +473,7 @@ class $modify(ColoredNameInfoLayer, InfoLayer) {
 
 			/*less crashes*/
 			if (!title) {
-				return false;
+				return true;
 			};
 
 			/*get the difficulty*/
@@ -539,10 +539,8 @@ class $modify(ColoredNameInfoLayer, InfoLayer) {
 
 			/*less crashes*/
 			if (!title) {
-				return false;
+				return true;
 			};
-		
-			/*i'll update this to use the current difficulty whenever i find out how to get it.*/
 
 			/*now onto editing the info layer*/
 
