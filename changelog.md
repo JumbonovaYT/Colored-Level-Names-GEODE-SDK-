@@ -1,3 +1,7 @@
+# 1.3.2
+- Crossplatform support (thanks erymanthus)
+- Less lines of code (thanks erymanthus)
+
 # 1.3.1
 - Less crashes (thanks hiimjustin000)
 
