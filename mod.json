@@ -8,15 +8,15 @@
 	},
 	"id": "jumbonova.colored_level_names",
 	"name": "Colored Level Names",
-	"version": "v1.3.0",
+	"version": "v1.3.1",
 	"developer": "Jumbonova",
 	"description": "This mod colors your level names.",
 	"tags": ["interface", "customization"],
-    	"links": { "source": "https://github.com/JumbonovaYT/Colored-Level-Names-GEODE-SDK-" },
-    	"dependencies": [ {
-        	"id": "geode.node-ids",
-        	"version": ">=v1.16.0",
-        	"importance": "required"
+    "links": { "source": "https://github.com/JumbonovaYT/Colored-Level-Names-GEODE-SDK-" },
+    "dependencies": [ {
+        "id": "geode.node-ids",
+        "version": ">=v1.16.0",
+        "importance": "required"
 	} ],
 	"settings": {
 
