@@ -1,3 +1,6 @@
+# 1.3.1
+- Less crashes (thanks hiimjustin000)
+
 # 1.3.0
 - Added "customization" tag, because this mod lets you customize level names, and removed "Offline" tag, because you need to be online to even see levels.
 - Mod works with the InfoLayer (comments page) now, which can also be enabled/disabled in the settings.
