@@ -2,6 +2,7 @@
 #include <Geode/modify/LevelListLayer.hpp>
 #include <Geode/modify/LevelListCell.hpp>
 #include <Geode/modify/LevelCell.hpp>
+#include <Geode/modify/InfoLayer.hpp>
 using namespace geode::prelude;
 
 static cocos2d::ccColor3B getColorFromModSettings(const std::string_view key) {
@@ -24,11 +25,11 @@ this function is a helper to be used in combination with the getColors() functio
 */
 
 static int getLevelDifficulty(GJGameLevel* level) {
-	if (level->m_autoLevel) return -1;
+	if (level->m_autoLevel) return 0;
 
 	auto diff = level->m_difficulty;
 
-	if (level->m_ratingsSum != 0) diff = static_cast<GJDifficulty>(level->m_ratingsSum / 10);
+	if (level->m_ratingsSum != 0) diff = static_cast<GJDifficulty>(level->m_ratingsSum / 10); else return -1;
 
 	if (level->m_demon > 0) {
 		auto demonDiff = level->m_demonDifficulty;
@@ -42,6 +43,7 @@ static int getLevelDifficulty(GJGameLevel* level) {
 	}
 
 	switch (diff) {
+		case GJDifficulty::NA: return -1;
 		case GJDifficulty::Demon: return 8;
 		case GJDifficulty::Easy:
 		case GJDifficulty::Normal:
@@ -51,7 +53,6 @@ static int getLevelDifficulty(GJGameLevel* level) {
 		default: return 0;
 	}
 }
-
 static std::array<cocos2d::ccColor3B, 11> getColors() {
 	return std::array<cocos2d::ccColor3B, 11> {
 		// m_levelList->m_difficulty
@@ -86,17 +87,12 @@ static std::array<cocos2d::ccColor3B, 11> getColors() {
 
 class $modify(ColoredNameLevelInfoLayer, LevelInfoLayer) {
 	bool init(GJGameLevel* level, bool info) {
-
 		if (!LevelInfoLayer::init(level, info)) {
 			return false;
 		}
-
-		if (!Mod::get()->getSettingValue<bool>("Change Title of LevelInfo")) return true;
-
-		/*get the nodes in the level info page*/
+		if (!Mod::get()->getSettingValue<bool>("Change Names of Levels")) return true;
 
 		auto title = typeinfo_cast<CCLabelBMFont*>(this->getChildByID("title-label"));
-
 		if (!title) return true;
 
 		auto diff = getLevelDifficulty(level);
@@ -109,16 +105,10 @@ class $modify(ColoredNameLevelInfoLayer, LevelInfoLayer) {
 
 class $modify(ColoredNameLevelListLayer, LevelListLayer) { 
 	bool init(GJLevelList* list) {
-
 		if (!LevelListLayer::init(list)) {
 			return false;
 		}
-
-		/*before we start, lets check if this feature is enabled. if it isn't, we'll stop this from running.*/
-
-		if (!Mod::get()->getSettingValue<bool>("Change Title of Lists") || !m_levelList) return true;
-
-		/*get the node in the level info page*/
+		if (!Mod::get()->getSettingValue<bool>("Change Names of Lists") || !m_levelList) return true;
 
 		auto title = typeinfo_cast<CCLabelBMFont*>(this->getChildByID("title-label"));
 		if (!title) return true;
@@ -127,59 +117,50 @@ class $modify(ColoredNameLevelListLayer, LevelListLayer) {
 		else title->setColor(getColors()[m_levelList->m_difficulty]);
 
 		return true;
-
 	}
 };
 
 
-class $modify(MyLevelCell, LevelCell) {
+class $modify(ColoredNameLevelCell, LevelCell) {
 	static void onModify(auto & self) {
 		(void) self.setHookPriority("LevelCell::loadFromLevel", 1);
 	}
 
 	static void editLevelCell(CCLayer* mainLayer, GJGameLevel* level) {
-		if (!Mod::get()->getSettingValue<bool>("Change Title of LevelCell")) return;
+		if (!Mod::get()->getSettingValue<bool>("Change Names of LevelCells")) return;
 
-		/*get the nodes in the level info page*/
-
-		auto title = typeinfo_cast<CCLabelBMFont*>(mainLayer->getChildByIDRecursive("level-name"));
-
+		auto title = typeinfo_cast<CCLabelBMFont*>(mainLayer->getChildByID("level-name"));
 		if (!title) return;
 
 		auto diff = getLevelDifficulty(level);
 		if (diff == -1) title->setColor(getColorFromModSettings("N/A Level Color"));
 		else title->setColor(getColors()[diff]);
-
 	};
 
-	/*run*/
-
-	void loadCustomLevelCell() {
-		LevelCell::loadCustomLevelCell();
+	void loadFromLevel(GJGameLevel* level) {
+		LevelCell::loadFromLevel(level);
 		const auto mainLayer = this->m_mainLayer;
 		if (!mainLayer || !m_level) return;
 		editLevelCell(mainLayer, m_level);
 	}
 };
 
-class $modify(MyLevelListCell, LevelListCell) {
+class $modify(ColoredNameLevelListCell, LevelListCell) {
 	static void onModify(auto & self) {
 		(void) self.setHookPriority("LevelListCell::loadFromList", 1);
 	}
 
 	static void editListLevelCell(CCLayer* mainLayer, GJLevelList* levelList) {
-		if (!Mod::get()->getSettingValue<bool>("Change Title of List LevelCells")) return;
+		if (!Mod::get()->getSettingValue<bool>("Change Names of ListLevelCells")) return;
 
 		/*get the nodes in the level info page*/
 
 		auto title = typeinfo_cast<CCLabelBMFont*>(mainLayer->getChildByID("list-name-label"));
 		if (!title) return;
-
+		
 		if (levelList->m_difficulty == -1) title->setColor(getColorFromModSettings("N/A Level Color"));
 		else title->setColor(getColors()[levelList->m_difficulty]);
 	}
-
-	/*run*/
 
 	void loadFromList(GJLevelList* list) {
 		LevelListCell::loadFromList(list);
@@ -187,5 +168,28 @@ class $modify(MyLevelListCell, LevelListCell) {
 		if (!mainLayer || !m_levelList) return;
 		editListLevelCell(mainLayer, m_levelList);
 	}
+};
 
+class $modify(ColoredNameInfoLayer, InfoLayer) {
+	bool init(GJGameLevel *level, GJUserScore *score, GJLevelList *list) {
+		if (!InfoLayer::init(level, score, list)) {
+			return false;
+		}
+		if (!Mod::get()->getSettingValue<bool>("Change Names of InfoLayers")) return true;
+		
+		auto title = typeinfo_cast<CCLabelBMFont*>(m_mainLayer->getChildByID("title-label"));
+		if (!title) return true;
+
+		if (level) {
+
+		auto diff = getLevelDifficulty(level);
+			if (diff == -1) title->setColor(getColorFromModSettings("N/A Level Color"));
+			else title->setColor(getColors()[diff]);
+		} 
+		if (list) {
+			if (list->m_difficulty == -1) title->setColor(getColorFromModSettings("N/A Level Color"));
+			else title->setColor(getColors()[list->m_difficulty]);
+		}
+	return true;
+	}
 };
