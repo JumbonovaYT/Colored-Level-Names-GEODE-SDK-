@@ -30,33 +30,33 @@
 			"name": "Enable/disable Features",
 			"description": "Enable and disable features of this mod."
 			},
-		"Change Title of Levels": {
+		"Change Names of Levels": {
 			"type": "bool",
-			"name": "Change Title of Levels",
+			"name": "Change Names of Levels",
 			"description": "Change the color of level names when you open them.",
 			"default": true
 			},
-		"Change Title of Lists": {
+		"Change Names of Lists": {
 			"type": "bool",
-			"name": "Change Title of Lists",
+			"name": "Change Names of Lists",
 			"description": "Change the color of list names when you open them.",
 			"default": true
 		},
-		"Change Title of LevelCells": {
+		"Change Names of LevelCells": {
 			"type": "bool",
-			"name": "Change Title of LevelCells",
+			"name": "Change Names of LevelCells",
 			"description": "Change the color of level names when you search.",
 			"default": true
 		},
-		"Change Title of List LevelCells": {
+		"Change Names of ListLevelCells": {
 			"type": "bool",
-			"name": "Change Title of List LevelCells",
+			"name": "Change Names of ListLevelCells",
 			"description": "Change the color of list names.",
 			"default": true
 		},
-		"Change Title of InfoLayer": {
+		"Change Names of InfoLayers": {
 			"type": "bool",
-			"name": "Change Title of InfoLayer",
+			"name": "Change Names of InfoLayers",
 			"description": "Change the color of the title in the 'more info' popup in a level or list. THIS USES THE RECOMMENDED DIFFICULTY, NOT THE CURRENT DIFFICULTY. IT MAY BE THE WRONG DIFFICULTY.",
 			"default": true
 		},
