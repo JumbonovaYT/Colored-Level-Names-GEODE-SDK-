@@ -1,151 +1,129 @@
 {
-	"geode": "4.0.1",
+	"geode": "5.0.0",
 	"gd": {
-		"win": "2.2074",
-		"mac": "2.2074",
-		"android": "2.2074"
+		"win": "2.2081",
+		"mac": "2.2081",
+		"android": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "jumbonova.colored_level_names",
 	"name": "Colored Level Names",
-	"version": "v1.3.2",
+	"version": "v1.4.0",
 	"developer": "Jumbonova",
-	"description": "This mod colors your level names.",
+	"description": "Colors the names of levels",
 	"tags": [
 		"interface",
 		"customization"
 	],
 	"links": {
 		"source": "https://github.com/JumbonovaYT/Colored-Level-Names-GEODE-SDK-"
-		},
-	"dependencies": [
-		{
-			"id": "geode.node-ids",
-			"version": ">=v1.16.0",
-			"importance": "required"
+	},
+	"dependencies": {
+		"geode.node-ids": {
+			"required": true,
+			"version": ">=1.22.0"
 		}
-	],
+	},
 	"settings": {
 		"Enable/disable Features": {
 			"type": "title",
-			"name": "Enable/disable Features",
-			"description": "Enable and disable features of this mod."
-			},
+			"name": "Color level names in the...",
+			"description": "Choose where level names are colored."
+		},
 		"Change Names of Levels": {
 			"type": "bool",
-			"name": "Change Names of Levels",
-			"description": "Change the color of level names when you open them.",
+			"name": "LevelInfoLayer",
+			"description": "Change the color of level names when you view them.",
 			"default": true
-			},
+		},
 		"Change Names of Lists": {
 			"type": "bool",
-			"name": "Change Names of Lists",
-			"description": "Change the color of list names when you open them.",
+			"name": "ListLayer",
+			"description": "Change the color of list names when you view them.",
 			"default": true
 		},
 		"Change Names of LevelCells": {
 			"type": "bool",
-			"name": "Change Names of LevelCells",
-			"description": "Change the color of level names when you search.",
+			"name": "LevelCell",
+			"description": "Change the color of level names in lists, when searching, and when looking at the recent taaab!!!!!!!",
 			"default": true
 		},
 		"Change Names of ListLevelCells": {
 			"type": "bool",
-			"name": "Change Names of ListLevelCells",
-			"description": "Change the color of list names.",
+			"name": "ListCell",
+			"description": "Change the color of list names when searching.",
 			"default": true
 		},
 		"Change Names of InfoLayers": {
 			"type": "bool",
-			"name": "Change Names of InfoLayers",
-			"description": "Change the color of the title in the 'more info' popup in a level or list. THIS USES THE RECOMMENDED DIFFICULTY, NOT THE CURRENT DIFFICULTY. IT MAY BE THE WRONG DIFFICULTY.",
+			"name": "InfoLayer",
+			"description": "Change the color of level names in the more info/comments popup.",
 			"default": true
 		},
-		"Main Difficulties Title": {
+		"Colors Title": {
 			"type": "title",
-			"name": "Main Difficulties",
-			"description": "These are the colors used for normal difficulty level titles, like easy or harder."
+			"name": "Colors",
+			"description": "The colors that level names can be (1 color for every difficulty)."
+		},
+		"N/A Level Color": {
+			"name": "N/A Level Color",
+			"type": "rgb",
+			"default": [255, 255, 255]
 		},
 		"Easy Level Color": {
 			"name": "Easy Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Easy.",
-			"default": [111, 202, 224]
+			"default": [60, 202, 255]
 		},
 		"Normal Level Color": {
 			"name": "Normal Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Normal.",
-			"default": [101, 235, 134]
+			"default": [34, 233, 65]
 		},
 		"Hard Level Color": {
 			"name": "Hard Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Hard.",
-			"default": [255, 215, 82]
+			"default": [255, 190, 0]
 		},
 		"Harder Level Color": {
 			"name": "Harder Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Harder.",
-			"default": [228, 58, 46]
+			"default": [255, 50, 31]
 		},
 		"Insane Level Color": {
 			"name": "Insane Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Insane.",
-			"default": [255, 141, 246]
-		},
-		"Demon Difficulties Title": {
-			"type": "title",
-			"name": "Demon Difficulties",
-			"description": "These are the colors used for demon level titles, like easy demon or insane demon."
+			"default": [255, 107, 228]
 		},
 		"Easy Demon Level Color": {
 			"name": "Easy Demon Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Easy Demon.",
-			"default": [209, 129, 255]
+			"default": [182, 84, 255]
 		},
 		"Medium Demon Level Color": {
 			"name": "Medium Demon Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Medium Demon.",
-			"default": [238, 151, 255]
+			"default": [255, 103, 233]
 		},
 		"Hard Demon Level Color": {
 			"name": "Hard Demon Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Hard Demon.",
-			"default": [255, 132, 132]
+			"default": [255, 48, 48]
 		},
 		"Insane Demon Level Color": {
 			"name": "Insane Demon Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Insane Demon.",
-			"default": [255, 101, 101]
+			"default": [255, 41, 41]
 		},
 		"Extreme Demon Level Color": {
 			"name": "Extreme Demon Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Extreme Demon.",
-			"default": [255, 79, 79]
-		},
-		"Other Difficulties Title": {
-			"type": "title",
-			"name": "Other Difficulties",
-			"description": "These are the colors used for other level titles, like N/A levels."
-			},
-		"N/A Level Color": {
-			"name": "N/A Level Color",
-			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of N/A.",
-			"default": [255, 255, 255]
+			"default": [226, 22, 22]
 		},
 		"Auto Level Color": {
 			"name": "Auto Level Color",
 			"type": "rgb",
-			"description": "The color used in level titles with the difficulty of Auto.",
-			"default": [255, 215, 83]
+			"default": [255, 190, 71]
 		}
 	}
 }

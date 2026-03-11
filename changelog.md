@@ -1,3 +1,11 @@
+# 1.4.0
+- Updated to geode 5.0.0
+- iOS support
+- New icon
+- Lots of rewording
+- Adjusted the default colors to fit more with their difficulty, you might need to reset the mod settings to get them
+- Fixed local levels being colored (i think ery fixed this and i decided to break it for some reason my bad)
+
 # 1.3.2
 - Crossplatform support (thanks erymanthus)
 - Less lines of code (thanks erymanthus)
