@@ -1,3 +1,9 @@
+# 1.5.0
+- The PauseLayer (suggested by [Ion Ion](user:30635974)) and the main level names are colored now
+- Changed some settings names and descriptions
+- Tried to lower the amount of lines of code
+- Updated the download count in the icon
+
 # 1.4.0
 - Updated to geode 5.0.0
 - iOS support

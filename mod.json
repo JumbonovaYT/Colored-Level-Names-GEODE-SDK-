@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0",
+	"geode": "5.7.1",
 	"gd": {
 		"win": "2.2081",
 		"mac": "2.2081",
@@ -8,7 +8,7 @@
 	},
 	"id": "jumbonova.colored_level_names",
 	"name": "Colored Level Names",
-	"version": "v1.4.0",
+	"version": "v1.5.0",
 	"developer": "Jumbonova",
 	"description": "Colors the names of levels",
 	"tags": [
@@ -27,37 +27,49 @@
 	"settings": {
 		"Enable/disable Features": {
 			"type": "title",
-			"name": "Color level names in the...",
+			"name": "Color names in the...",
 			"description": "Choose where level names are colored."
 		},
 		"Change Names of Levels": {
 			"type": "bool",
-			"name": "LevelInfoLayer",
-			"description": "Change the color of level names when you view them.",
+			"name": "Level Info Layer",
+			"description": "Change the color of online level names when you view them.",
 			"default": true
 		},
 		"Change Names of Lists": {
 			"type": "bool",
-			"name": "ListLayer",
+			"name": "List Layer",
 			"description": "Change the color of list names when you view them.",
+			"default": true
+		},
+		"Change Names of Main Levels": {
+			"type": "bool",
+			"name": "Main Level Page",
+			"description": "Change the color of main levels",
 			"default": true
 		},
 		"Change Names of LevelCells": {
 			"type": "bool",
-			"name": "LevelCell",
-			"description": "Change the color of level names in lists, when searching, and when looking at the recent taaab!!!!!!!",
+			"name": "Level Cell",
+			"description": "Change the color of online level names in lists, when searching, and when looking at the recent taaab!!!!!!!",
 			"default": true
 		},
 		"Change Names of ListLevelCells": {
 			"type": "bool",
-			"name": "ListCell",
+			"name": "List Cell",
 			"description": "Change the color of list names when searching.",
 			"default": true
 		},
 		"Change Names of InfoLayers": {
 			"type": "bool",
-			"name": "InfoLayer",
-			"description": "Change the color of level names in the more info/comments popup.",
+			"name": "Info Layer",
+			"description": "Change the color of online level and list names in the more info/comments menu.",
+			"default": true
+		},
+		"Change Names of PauseLayer": {
+			"type": "bool",
+			"name": "Pause Layer",
+			"description": "Change the color of level names in the pause menu.",
 			"default": true
 		},
 		"Colors Title": {
