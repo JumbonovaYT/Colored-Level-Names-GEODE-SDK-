@@ -162,12 +162,10 @@ class $modify(PauseLayer) {
 		if (!Mod::get()->getSettingValue<bool>("Change Names of PauseLayer")) return;
 
 		if (auto level = PlayLayer::get()->m_level) {
-			log::info("{}", level->m_levelID);
-			if (level->m_isEditable) return; // this is the only way i know that can make the mod not color editor levels, please let me know if theres a better way for this
-
+			if (level->m_isEditable) return; // m_levelType is always SearchResult for me so ill just use this
+			
 			if (auto title = typeinfo_cast<CCLabelBMFont*>(this->getChildByID("level-name"))) {
 				int diff = getLevelDifficulty(level);
-				log::info("{}", level->m_demonDifficulty);
 				if (diff == -1) title->setColor(getColorFromModSettings("N/A Level Color"));
 				else title->setColor(getColors()[diff]);
 			}

@@ -8,7 +8,7 @@ else()
 endif()
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(ColoredLevelNames VERSION 1.5.0)
+project(ColoredLevelNames VERSION 1.5.1)
 
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
