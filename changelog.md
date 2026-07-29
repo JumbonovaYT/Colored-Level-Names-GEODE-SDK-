@@ -1,4 +1,4 @@
-# v1.5.1
+# 1.5.1
 - Removed some stuff that creates usless logs every time you open the PauseLayer
 
 # 1.5.0
