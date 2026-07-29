@@ -1,3 +1,6 @@
+# v1.5.1
+- Removed some stuff that creates usless logs every time you open the PauseLayer
+
 # 1.5.0
 - The PauseLayer (suggested by [Ion Ion](user:30635974)) and the main level names are colored now
 - Changed some settings names and descriptions
